@@ -10,5 +10,5 @@ b = st.slider("Hardening exponent",min_value=0.1, max_value=5.0, value=1.0, step
 if st.button("Calculate"):
 
     # Call plotting function
-    fig = mono(fu,h,b,int(NN))
+    fig = mono(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
