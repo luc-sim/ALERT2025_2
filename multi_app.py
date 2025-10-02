@@ -5,10 +5,27 @@ st.title("Monotonic loading with multi-surface model")
 st.markdown(""" Your goal here is to get the closest possible to the blue curve on the graph.
             Give it a first run to see what the curve you need to fit is.""")
 
-N = st.number_input("Number of surfaces", min_value=1, max_value=10, value=1, step=1)
-fu = st.number_input("Ultimate force", min_value=0.0, max_value=300.0, value=100.0, step=10.0)
-h = st.number_input("Hardening factor",min_value=1.0, max_value=10000.0, value=100.0, step=1.0)
-b = st.number_input("Hardening exponent",min_value=0.1, max_value=5.0, value=1.0, step=0.1)
+col1, col2 = st.columns([2,1])
+with col1:
+    st.markdown("**Number of surfaces:**")
+with col2:
+    N = st.number_input("", min_value=1, max_value=10, value=1, step=1, label_visibility="collapsed")
+col1, col2 = st.columns([2,1])
+with col1:
+    st.markdown("**Ultimate force (kN):**")
+with col2:
+    fu = st.number_input("", min_value=0.0, max_value=300.0, value=100.0, step=10.0, label_visibility="collapsed")
+col1, col2 = st.columns([2,1])
+with col1:
+    st.markdown("**Hardening factor:**")
+with col2:
+    h = st.number_input("", min_value=1.0, max_value=10000.0, value=100.0, step=1.0, label_visibility="collapsed")
+col1, col2 = st.columns([2,1])
+with col1:
+    st.markdown("**Hardening exponent:**")
+with col2:
+    b = st.number_input("", min_value=0.1, max_value=5.0, value=1.0, step=0.1, label_visibility="collapsed")
+
 if st.button("Monotonic response simulation"):
     # Call plotting function
     fig = mono(fu,h,b,int(N))
