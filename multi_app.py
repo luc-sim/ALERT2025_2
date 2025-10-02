@@ -1,6 +1,7 @@
 import streamlit as st
 from commands import mono
-from commands import cyclic
+from commands import cyclic2
+from commands import cyclic1
 
 st.title("Monotonic loading with multi-surface model")
 st.markdown(""" Your goal here is to get the closest possible to the black curve on the graph.
