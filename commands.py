@@ -27,7 +27,7 @@ H.acc([0.5])
 H.mode([1,2])
 H.quiet()
 
-prec = 50
+prec = 100
 bug = 0     # bug detector
 
 #Parameters
@@ -57,5 +57,6 @@ def mono(fu,h,b,NN):
     # w,dt = TC.drained_test(pt,qt,vt,eqd,prec,params,bug)
     fig = newp.plotA([],dt,['r-.'],[300,-0,200,0,0.05,-0.00,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Drained test')
     return fig
+
 
 mono(fu,h,b,NN)
