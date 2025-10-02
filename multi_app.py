@@ -41,7 +41,11 @@ if st.button("Monotonic response simulation"):
     fig = mono(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
 
-if st.button("Cyclic response simulation"):
+if st.button("Cyclic response simulation (two-way)"):
     # Call plotting function
-    fig = cyclic(fu,h,b,int(N))
+    fig = cyclic2(fu,h,b,int(N))
+    st.pyplot(fig)   # <-- display in Streamlit
+if st.button("Cyclic response simulation (partial one-way)"):
+    # Call plotting function
+    fig = cyclic1(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
