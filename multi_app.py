@@ -2,8 +2,8 @@ import streamlit as st
 from commands import mono
 
 st.title("Monotonic loading with multi-surface model")
-st.markdown(" Your goal here is to get the closest possible to the blue curve on the graph.
-            Give it a first run to see what the curve you need to fit is.")
+st.markdown(""" Your goal here is to get the closest possible to the blue curve on the graph.
+            Give it a first run to see what the curve you need to fit is.""")
 
 N = st.number_input("Number of surfaces", min_value=1, max_value=10, value=1, step=1)
 fu = st.number_input("Ultimate force", min_value=0.0, max_value=300.0, value=100.0, step=10.0)
