@@ -3,7 +3,3 @@ numpy
 scipy
 matplotlib
 importlib
-os.path
-re
-sys
-time
