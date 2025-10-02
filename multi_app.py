@@ -3,8 +3,13 @@ from commands import mono
 from commands import cyclic
 
 st.title("Monotonic loading with multi-surface model")
-st.markdown(""" Your goal here is to get the closest possible to the blue curve on the graph.
+st.markdown(""" Your goal here is to get the closest possible to the black curve on the graph.
             Give it a first run to see what the curve you need to fit is.""")
+st.markdown(""" Here we are looking at a Von-Mises type multi-surface model in triaxial space with pure deviatoric plasticity.
+            It is defined in hyperplasticity, using a linear elastic with pure deviatoric gibbs energy, and yield surfaces written:
+            $y^{(n)}=(N \chi_q - 3*H^{(n)}*\alpha^{(n)})^2/(n/N f_u)^2-1""")
+st.markdown(""" Here the hardening moduli are given by $H=h*(1-n/N)^b$ where h is the hardening factor,
+            N the number of surfaces and n the index of a surface (from 1 to N), and b """)
 
 col1, col2 = st.columns([2,1])
 with col1:
