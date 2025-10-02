@@ -9,7 +9,8 @@ st.markdown(""" Here we are looking at a Von-Mises type multi-surface model in t
             It is defined in hyperplasticity, using a linear elastic with pure deviatoric gibbs energy, and yield surfaces written:""")
 st.latex(r""" 
 y^{(n)} = \frac{ \left( N \chi_q - 3 H^{(n)} \alpha^{(n)} \right)^2 }
-               { \left( \frac{n}{N} f_u \right)^2 - 1 }
+               { \left( \frac{n}{N} f_u \right)^2  }
+               -1
 """)
 st.markdown(""" Here the hardening moduli are given by $H=h*(1-n/N)^b$ where h is the hardening factor,
             N the number of surfaces and n the index of a surface (from 1 to N), and b """)
