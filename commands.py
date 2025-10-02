@@ -59,7 +59,7 @@ def cyclic2(fu,h,b,NN):
     H.start()
     H.init_stress([pt,qt])
     H.general_inc([1,0,0,1,0,0,0,0,0.0,0.01,1,10,prec])
-    f = max(200,0.9*fu)
+    f = min(200,0.9*fu)
     for i in range(5):
         H.general_inc([1,0,0,1,0,0,0,0,0.0,f,1,10,prec])
         H.general_inc([1,0,0,1,0,0,0,0,0.0,-f,1,10,prec])
@@ -80,7 +80,7 @@ def cyclic1(fu,h,b,NN):
     H.start()
     H.init_stress([pt,qt])
     H.general_inc([1,0,0,1,0,0,0,0,0.0,0.01,1,10,prec])
-    f = max(200,0.9*fu)
+    f = min(200,0.9*fu)
     H.general_inc([1,0,0,1,0,0,0,0,0.0,f,1,10,prec])
     for i in range(5):
         H.general_inc([1,0,0,1,0,0,0,0,0.0,f/2,1,10,prec])
@@ -93,4 +93,5 @@ def cyclic1(fu,h,b,NN):
     # w,dt = TC.drained_test(pt,qt,vt,eqd,prec,params,bug)
     fig = newp.plotA([],dt2,['r-.'],[250,-250,200,0,0.02,-0.02,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Cyclic test')
     return fig
+
 
