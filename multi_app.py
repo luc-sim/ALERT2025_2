@@ -7,7 +7,7 @@ st.markdown(""" Your goal here is to get the closest possible to the black curve
             Give it a first run to see what the curve you need to fit is.""")
 st.markdown(""" Here we are looking at a Von-Mises type multi-surface model in triaxial space with pure deviatoric plasticity.
             It is defined in hyperplasticity, using a linear elastic with pure deviatoric gibbs energy, and yield surfaces written:
-            $y^{(n)}=(N \chi_q - 3*H^{(n)}*\alpha^{(n)})^2/(n/N f_u)^2-1""")
+            $y^{(n)}=(N \chi_q - 3*H^{(n)}*\alpha^{(n)})^2/(n/N f_u)^2-1$""")
 st.markdown(""" Here the hardening moduli are given by $H=h*(1-n/N)^b$ where h is the hardening factor,
             N the number of surfaces and n the index of a surface (from 1 to N), and b """)
 
