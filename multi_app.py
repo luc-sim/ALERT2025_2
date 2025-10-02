@@ -18,22 +18,22 @@ st.markdown(""" Here the hardening moduli are given by $H=h*(1-n/N)^b$ where h i
 
 col1, col2 = st.columns([2,1])
 with col1:
-    st.markdown("**Number of surfaces:**")
+    st.markdown("**Number of surfaces (1<N<10):**")
 with col2:
     N = st.number_input("", min_value=1, max_value=10, value=1, step=1, label_visibility="collapsed")
 col1, col2 = st.columns([2,1])
 with col1:
-    st.markdown("**Ultimate force (kN):**")
+    st.markdown("**Ultimate force (kN) (10<fu<300):**")
 with col2:
-    fu = st.number_input("", min_value=0.0, max_value=300.0, value=100.0, step=10.0, label_visibility="collapsed")
+    fu = st.number_input("", min_value=10.0, max_value=300.0, value=100.0, step=10.0, label_visibility="collapsed")
 col1, col2 = st.columns([2,1])
 with col1:
-    st.markdown("**Hardening factor:**")
+    st.markdown("**Hardening factor (1<h<10000):**")
 with col2:
     h = st.number_input("", min_value=1.0, max_value=10000.0, value=100.0, step=1.0, label_visibility="collapsed")
 col1, col2 = st.columns([2,1])
 with col1:
-    st.markdown("**Hardening exponent:**")
+    st.markdown("**Hardening exponent (0.1<b<5.0):**")
 with col2:
     b = st.number_input("", min_value=0.1, max_value=5.0, value=1.0, step=0.1, label_visibility="collapsed")
 
