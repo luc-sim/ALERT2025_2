@@ -41,12 +41,16 @@ if st.button("Monotonic response simulation"):
     # Call plotting function
     fig = mono(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
-
+col1, col2 = st.columns([2,1])
+with col1:
+    st.markdown("Max. strain displayed")
+with col2:
+    edis = st.number_input("", min_value=0.01, max_value=0.1, value=0.03, step=0.01, label_visibility="collapsed")
 if st.button("Cyclic response simulation (two-way)"):
     # Call plotting function
-    fig = cyclic2(fu,h,b,int(N))
+    fig = cyclic2(fu,h,b,int(N),edis)
     st.pyplot(fig)   # <-- display in Streamlit
 if st.button("Cyclic response simulation (partial one-way)"):
     # Call plotting function
-    fig = cyclic1(fu,h,b,int(N))
+    fig = cyclic1(fu,h,b,int(N),edis)
     st.pyplot(fig)   # <-- display in Streamlit
