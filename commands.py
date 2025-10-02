@@ -50,7 +50,7 @@ def mono(fu,h,b,NN):
 
 mono(fu,h,b,NN)
 
-def cyclic(fu,h,b,NN):
+def cyclic2(fu,h,b,NN):
     prec = 10
     pt,qt=0.01,0 # Initial stress values
     vt = 2
@@ -59,14 +59,38 @@ def cyclic(fu,h,b,NN):
     H.start()
     H.init_stress([pt,qt])
     H.general_inc([1,0,0,1,0,0,0,0,0.0,0.01,1,10,prec])
+    f = max(200,0.9*fu)
     for i in range(5):
-        H.general_inc([1,0,0,1,0,0,0,0,0.0,200,1,10,prec])
-        H.general_inc([1,0,0,1,0,0,0,0,0.0,-200,1,10,prec])
-        H.general_inc([1,0,0,1,0,0,0,0,0.0,-200,1,10,prec])
-        H.general_inc([1,0,0,1,0,0,0,0,0.0,200,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,f,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,-f,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,-f,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,f,1,10,prec])
     H.general_inc([1,0,0,0,0,0,0,1,0.0,0.05,1,50,prec])
 
     dt2 = H.returnrec()
     # w,dt = TC.drained_test(pt,qt,vt,eqd,prec,params,bug)
     fig = newp.plotA([],dt2,['r-.'],[250,-250,200,0,0.02,-0.02,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Cyclic test')
     return fig
+def cyclic1(fu,h,b,NN):
+    prec = 10
+    pt,qt=0.01,0 # Initial stress values
+    vt = 2
+    params = [NN,K,G,fu,h,b]
+    H.const(params)
+    H.start()
+    H.init_stress([pt,qt])
+    H.general_inc([1,0,0,1,0,0,0,0,0.0,0.01,1,10,prec])
+    f = max(200,0.9*fu)
+    H.general_inc([1,0,0,1,0,0,0,0,0.0,f,1,10,prec])
+    for i in range(5):
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,f/2,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,-f/2,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,-f/2,1,10,prec])
+        H.general_inc([1,0,0,1,0,0,0,0,0.0,f/2,1,10,prec])
+    H.general_inc([1,0,0,0,0,0,0,1,0.0,0.05,1,50,prec])
+
+    dt2 = H.returnrec()
+    # w,dt = TC.drained_test(pt,qt,vt,eqd,prec,params,bug)
+    fig = newp.plotA([],dt2,['r-.'],[250,-250,200,0,0.02,-0.02,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Cyclic test')
+    return fig
+
