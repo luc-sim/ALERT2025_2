@@ -91,8 +91,9 @@ def cyclic1(fu,h,b,NN,edis=0.025):
 
     dt2 = H.returnrec()
     # w,dt = TC.drained_test(pt,qt,vt,eqd,prec,params,bug)
-    fig = newp.plotA([],dt2,['r-.'],[250,-250,200,0,edis,0,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Cyclic test')
+    fig = newp.plotA([],dt2,['r-.'],[300,-0,200,0,edis,0,0.04,-0.06],[''],lab=['',''],ncl=1,lw=1.75,ttl='Cyclic test')
     return fig
+
 
 
 
