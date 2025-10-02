@@ -41,6 +41,9 @@ if st.button("Monotonic response simulation"):
     # Call plotting function
     fig = mono(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
+
+st.markdown("In the following, you can simulate a two-way cyclic test followed by monotonic reloading, or a partial one-way cyclic test followed by monotonic reloading.")
+
 col1, col2 = st.columns([2,1])
 with col1:
     st.markdown("Max. strain displayed")
