@@ -1,5 +1,5 @@
 import streamlit as st
-from 2025_10_commands import mono
+from commands import mono
 
 st.title("Monotonic loading with multi-surface model")
 
