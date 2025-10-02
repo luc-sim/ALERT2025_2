@@ -30,3 +30,8 @@ if st.button("Monotonic response simulation"):
     # Call plotting function
     fig = mono(fu,h,b,int(N))
     st.pyplot(fig)   # <-- display in Streamlit
+
+if st.button("Cyclic response simulation"):
+    # Call plotting function
+    fig = cyclic(fu,h,b,int(N))
+    st.pyplot(fig)   # <-- display in Streamlit
